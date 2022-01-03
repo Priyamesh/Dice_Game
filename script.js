@@ -24,6 +24,9 @@ let player1_total = 0;
 const p0_total = document.querySelector('#score--0');
 const p1_total = document.querySelector('#score--1');
 
+const player0 = document.querySelector('.player--0');
+const player1 = document.querySelector('.player--1');
+
 const playerSwitch_hold = function () {
   player0_total += player0_currScore;
   player1_total += player1_currScore;
@@ -32,6 +35,8 @@ const playerSwitch_hold = function () {
   player0_currScore = 0;
   player1_currScore = 0;
   turn = !turn;
+  player0.classList.toggle('player--active');
+  player1.classList.toggle('player--active');
   p0_curr.textContent = 0;
   p1_curr.textContent = 0;
 };
@@ -44,6 +49,8 @@ const playerSwitch = function () {
   player0_currScore = 0;
   player1_currScore = 0;
   turn = !turn;
+  player0.classList.toggle('player--active');
+  player1.classList.toggle('player--active');
   p0_curr.textContent = 0;
   p1_curr.textContent = 0;
 };
@@ -96,6 +103,7 @@ const resetGame = function () {
   p1_curr.textContent = 0;
   p0_total.textContent = 0;
   p1_total.textContent = 0;
+  player0.classList.add('player--active');
 };
 
 btn_roll.addEventListener('click', diceRoll);
