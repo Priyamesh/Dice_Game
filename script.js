@@ -77,14 +77,14 @@ const diceRoll = function () {
     else player1_currScore += diceValue;
 
     //winning situation
-    if (player0_total + player0_currScore >= 20) {
+    if (player0_total + player0_currScore >= 100) {
       p0_total.textContent = `${player0_total + player0_currScore} Won 🍻`;
       player0.classList.add('player--winner');
       player0.classList.remove('player--active');
       playing = false;
       diceImg.classList.add('hidden');
     }
-    if (player1_total + player1_currScore >= 20) {
+    if (player1_total + player1_currScore >= 100) {
       p1_total.textContent = `${player1_total + player1_currScore} Won 🍻`;
       player1.classList.add('player--winner');
       player1.classList.remove('player--active');
